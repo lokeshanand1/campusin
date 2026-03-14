@@ -119,7 +119,7 @@ function getUtmParams() {
   return { utmSource, utmMedium, utmCampaign };
 }
 
-// Generic webhook submission (Zapier / CRM)
+// Generic API submission to backend
 async function submitLeadForm(form, service) {
   const formData = new FormData(form);
   const { utmSource, utmMedium, utmCampaign } = getUtmParams();
@@ -132,11 +132,9 @@ async function submitLeadForm(form, service) {
 
   const data = Object.fromEntries(formData.entries());
 
-  const webhookUrl =
-    window.CAMPUS_CAREER_WEBHOOK_URL ||
-    "https://hooks.zapier.com/hooks/catch/your-zap-id-here";
+  const apiUrl = window.CAMPUS_CAREER_API_URL || "/api/leads";
 
-  const response = await fetch(webhookUrl, {
+  const response = await fetch(apiUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -144,9 +142,36 @@ async function submitLeadForm(form, service) {
     body: JSON.stringify(data)
   });
 
-  if (!response.ok) {
-    throw new Error("Failed to submit form");
+  const result = await response.json();
+  
+  if (!response.ok || !result.success) {
+    throw new Error(result.message || "Failed to submit form");
   }
+  
+  return result;
+}
+
+// Newsletter subscription to backend
+async function subscribeNewsletter(email) {
+  const apiUrl = window.CAMPUS_CAREER_API_URL ? 
+    window.CAMPUS_CAREER_API_URL.replace('/leads', '/subscribe') : 
+    "/api/subscribe";
+
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email })
+  });
+
+  const result = await response.json();
+  
+  if (!response.ok && !result.success) {
+    throw new Error(result.message || "Failed to subscribe");
+  }
+  
+  return result;
 }
 
 // Client-side validation
@@ -272,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorEl = newsletterForm.querySelector(".form-error");
     const emailInput = newsletterForm.querySelector("input[type='email']");
 
-    newsletterForm.addEventListener("submit", (event) => {
+    newsletterForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!(emailInput instanceof HTMLInputElement)) return;
       if (successEl) successEl.textContent = "";
@@ -285,11 +310,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      if (successEl) {
-        successEl.textContent =
-          "Thanks for subscribing! Check your inbox for our next newsletter.";
+      try {
+        const result = await subscribeNewsletter(emailInput.value.trim());
+        if (successEl) {
+          successEl.textContent = result.message || 
+            "Thanks for subscribing! Check your inbox for our next newsletter.";
+        }
+        newsletterForm.reset();
+      } catch (error) {
+        if (errorEl) {
+          errorEl.textContent = error.message || 
+            "Something went wrong. Please try again.";
+        }
       }
-      newsletterForm.reset();
     });
   }
 });

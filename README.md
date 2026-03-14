@@ -184,3 +184,52 @@ Body:
   - **[ ]** Clear internal SLA (e.g. “respond within 12–24 hours”).
   - **[ ]** Weekly review of conversion rates and top sources.
 
+---
+
+## Backend (Node.js + Express + MongoDB)
+
+The frontend is now fully connected to a Node.js backend with MongoDB.
+
+### Quick Start
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Start MongoDB** (local) or use MongoDB Atlas
+
+3. **Configure environment** (edit `.env`):
+   ```
+   MONGODB_URI=mongodb://localhost:27017/campuscareer
+   PORT=3000
+   ```
+
+4. **Run the server**:
+   ```bash
+   npm run dev
+   ```
+
+5. **Open** http://localhost:3000
+
+### API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/health` | GET | Health check |
+| `/api/leads` | POST | Submit lead form |
+| `/api/leads` | GET | Get all leads |
+| `/api/subscribe` | POST | Newsletter subscription |
+| `/api/subscribers` | GET | Get all subscribers |
+
+### Features Connected
+
+- **Lead forms** → Stored in MongoDB with validation
+- **Newsletter signup** → Stored in subscribers collection
+- **UTM tracking** → Automatically captured
+- **Analytics** → Still fires GA/GTM events
+
+### Collections
+
+- **leads**: Contact form submissions with status tracking
+- **subscribers**: Newsletter emails with deduplication
