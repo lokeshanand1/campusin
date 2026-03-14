@@ -21,8 +21,8 @@
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "123 Career Avenue",
-          "addressLocality": "Bengaluru",
-          "addressRegion": "Karnataka",
+          "addressLocality": "Lucknow",
+          "addressRegion": "Uttar Pradesh",
           "postalCode": "560001",
           "addressCountry": "IN"
         },
@@ -38,8 +38,11 @@
     <header class="site-header" aria-label="Main header">
       <div class="container header-inner">
         <a href="#top" class="logo" aria-label="Campus Career India home">
-          <span class="logo-mark">🎓</span>
-          <span class="logo-text">Campus Career India</span>
+          <img
+            src="./logo.png"
+            alt="Campus Career India"
+            class="logo-image"
+          />
         </a>
         <button
           class="nav-toggle"
@@ -80,11 +83,19 @@
               From resume to interview, from applications to visas — Campus Career India guides students every step of the way.
             </p>
             <div class="hero-ctas">
-              <a href="#apply-job-form" class="btn btn-primary">Apply Now</a>
+              <a
+                href="#lead-form"
+                class="btn btn-primary"
+                data-scroll-target="#lead-form"
+                data-service-choice="Apply for Job"
+              >
+                Apply Now
+              </a>
               <button
                 class="btn btn-outline"
                 type="button"
-                data-open-modal="counselling-modal"
+                data-scroll-target="#lead-form"
+                data-service-choice="Career Counselling"
               >
                 Book Counselling
               </button>
@@ -107,7 +118,11 @@
           <div class="hero-visual" aria-hidden="true">
             <div class="hero-card">
               <div class="hero-illustration">
-                <span class="grad-cap">🎓</span>
+                <img
+                  src="./logo.png"
+                  alt="Campus Career India"
+                  class="hero-logo"
+                />
                 <span class="plane">✈️</span>
               </div>
               <p class="hero-visual-text">
@@ -143,7 +158,8 @@
               <button
                 class="btn btn-secondary"
                 type="button"
-                data-scroll-target="#apply-job-form"
+                data-scroll-target="#lead-form"
+                data-service-choice="Apply for Job"
               >
                 Apply for Job
               </button>
@@ -162,7 +178,8 @@
               <button
                 class="btn btn-secondary"
                 type="button"
-                data-scroll-target="#study-abroad-form"
+                data-scroll-target="#lead-form"
+                data-service-choice="Study Abroad"
               >
                 Start Study Abroad
               </button>
@@ -181,7 +198,8 @@
               <button
                 class="btn btn-secondary"
                 type="button"
-                data-open-modal="counselling-modal"
+                data-scroll-target="#lead-form"
+                data-service-choice="Career Counselling"
               >
                 Book Counselling
               </button>
@@ -223,27 +241,26 @@
         </div>
       </section>
 
-      <!-- Lead capture forms -->
+      <!-- Lead capture form (single) -->
       <section
         class="section forms-section"
-        aria-label="Lead capture forms for services"
+        aria-label="Lead capture form"
       >
         <div class="container forms-grid">
-          <!-- Job form -->
           <article
             class="form-card"
-            id="apply-job-form"
-            aria-labelledby="apply-job-heading"
+            id="lead-form"
+            aria-labelledby="lead-form-heading"
           >
-            <h2 id="apply-job-heading" class="section-title">
-              Apply for Job Support
+            <h2 id="lead-form-heading" class="section-title">
+              Tell us how we can help
             </h2>
             <p class="section-intro">
-              Share a few details and we will match you with the right placement and coaching support.
+              Share a few details, choose your pathway, and we’ll match you with the right expert for jobs, study abroad, or career counselling.
             </p>
             <form
               class="lead-form"
-              data-service="Apply for Job"
+              data-service="Lead Enquiry"
               novalidate
             >
               <div class="field-grid">
@@ -259,9 +276,9 @@
                   <p class="field-error" aria-live="polite"></p>
                 </div>
                 <div class="form-field">
-                  <label for="job-email">Email</label>
+                  <label for="lead-email">Email</label>
                   <input
-                    id="job-email"
+                    id="lead-email"
                     name="email"
                     type="email"
                     autocomplete="email"
@@ -270,9 +287,9 @@
                   <p class="field-error" aria-live="polite"></p>
                 </div>
                 <div class="form-field">
-                  <label for="job-phone">Phone (WhatsApp preferred)</label>
+                  <label for="lead-phone">Phone (WhatsApp preferred)</label>
                   <input
-                    id="job-phone"
+                    id="lead-phone"
                     name="phone"
                     type="tel"
                     inputmode="tel"
@@ -282,9 +299,9 @@
                   <p class="field-error" aria-live="polite"></p>
                 </div>
                 <div class="form-field">
-                  <label for="job-college">College / University</label>
+                  <label for="lead-college">College / University</label>
                   <input
-                    id="job-college"
+                    id="lead-college"
                     name="college"
                     type="text"
                     required
@@ -292,9 +309,9 @@
                   <p class="field-error" aria-live="polite"></p>
                 </div>
                 <div class="form-field">
-                  <label for="job-degree">Degree &amp; Year</label>
+                  <label for="lead-degree">Degree &amp; Year</label>
                   <input
-                    id="job-degree"
+                    id="lead-degree"
                     name="degreeYear"
                     type="text"
                     placeholder="e.g., B.Tech CSE, 2025"
@@ -303,8 +320,18 @@
                   <p class="field-error" aria-live="polite"></p>
                 </div>
                 <div class="form-field">
-                  <label for="job-timeline">Preferred timeline</label>
-                  <select id="job-timeline" name="timeline" required>
+                  <label for="lead-service">Which support are you looking for?</label>
+                  <select id="lead-service" name="preferredService" required>
+                    <option value="">Select a pathway</option>
+                    <option value="Apply for Job">Apply for Job</option>
+                    <option value="Study Abroad">Study Abroad</option>
+                    <option value="Career Counselling">Career Counselling</option>
+                  </select>
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="lead-timeline">Preferred timeline</label>
+                  <select id="lead-timeline" name="timeline" required>
                     <option value="">Select timeline</option>
                     <option>Immediately</option>
                     <option>Next 3 months</option>
@@ -313,21 +340,20 @@
                   <p class="field-error" aria-live="polite"></p>
                 </div>
                 <div class="form-field full-width">
-                  <label for="job-message">Short message (optional)</label>
+                  <label for="lead-message">Short message (optional)</label>
                   <textarea
-                    id="job-message"
+                    id="lead-message"
                     name="message"
                     rows="3"
-                    placeholder="Share your target roles, companies, or challenges."
+                    placeholder="Share your goals, target countries, or any specific questions."
                   ></textarea>
                 </div>
               </div>
               <!-- Hidden fields -->
-              <input type="hidden" name="preferredService" value="Apply for Job" />
               <input type="hidden" name="utmSource" value="" />
               <input type="hidden" name="landingPageId" value="campus-career-india-main" />
               <button type="submit" class="btn btn-primary full-width">
-                Apply Now
+                Submit
               </button>
               <p class="form-success" aria-live="polite"></p>
               <p class="form-error" aria-live="polite"></p>
@@ -337,250 +363,39 @@
             </form>
           </article>
 
-          <!-- Study abroad form -->
-          <article
-            class="form-card"
-            id="study-abroad-form"
-            aria-labelledby="study-abroad-heading"
+          <aside
+            class="form-side-card"
+            aria-hidden="true"
           >
-            <h2 id="study-abroad-heading" class="section-title">
-              Start Your Study Abroad Plan
-            </h2>
-            <p class="section-intro">
-              Tell us where you want to go and what you want to study. We’ll help you build a winning application.
-            </p>
-            <form
-              class="lead-form"
-              data-service="Study Abroad"
-              novalidate
-            >
-              <div class="field-grid">
-                <div class="form-field">
-                  <label for="abroad-name">Full name</label>
-                  <input
-                    id="abroad-name"
-                    name="fullName"
-                    type="text"
-                    autocomplete="name"
-                    required
-                  />
-                  <p class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-field">
-                  <label for="abroad-email">Email</label>
-                  <input
-                    id="abroad-email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    required
-                  />
-                  <p class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-field">
-                  <label for="abroad-phone">Phone (WhatsApp preferred)</label>
-                  <input
-                    id="abroad-phone"
-                    name="phone"
-                    type="tel"
-                    inputmode="tel"
-                    pattern="^[0-9+\-\s]{8,15}$"
-                    required
-                  />
-                  <p class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-field">
-                  <label for="abroad-college">College / University</label>
-                  <input
-                    id="abroad-college"
-                    name="college"
-                    type="text"
-                    required
-                  />
-                  <p class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-field">
-                  <label for="abroad-degree">Degree &amp; Year</label>
-                  <input
-                    id="abroad-degree"
-                    name="degreeYear"
-                    type="text"
-                    placeholder="e.g., B.Com, 2024"
-                    required
-                  />
-                  <p class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-field">
-                  <label for="abroad-timeline">Preferred intake / timeline</label>
-                  <select id="abroad-timeline" name="timeline" required>
-                    <option value="">Select intake</option>
-                    <option>Jan intake</option>
-                    <option>May intake</option>
-                    <option>Sep intake</option>
-                    <option>Next 12–18 months</option>
-                  </select>
-                  <p class="field-error" aria-live="polite"></p>
-                </div>
-                <div class="form-field full-width">
-                  <label for="abroad-message">Short message (optional)</label>
-                  <textarea
-                    id="abroad-message"
-                    name="message"
-                    rows="3"
-                    placeholder="Target countries, budget, test scores (IELTS, GRE, etc.)."
-                  ></textarea>
-                </div>
-              </div>
-              <!-- Hidden fields -->
-              <input
-                type="hidden"
-                name="preferredService"
-                value="Study Abroad"
-              />
-              <input type="hidden" name="utmSource" value="" />
-              <input type="hidden" name="landingPageId" value="campus-career-india-main" />
-              <button type="submit" class="btn btn-primary full-width">
-                Start Study Abroad
-              </button>
-              <p class="form-success" aria-live="polite"></p>
-              <p class="form-error" aria-live="polite"></p>
-              <p class="form-note">
-                We’ll follow up with a free 15-minute discovery call on WhatsApp.
-              </p>
-            </form>
-          </article>
-        </div>
-      </section>
-
-      <!-- Counselling modal form -->
-      <div
-        class="modal"
-        id="counselling-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="counselling-modal-heading"
-        hidden
-      >
-        <div class="modal-backdrop" data-close-modal></div>
-        <div class="modal-content">
-          <button
-            class="modal-close"
-            type="button"
-            aria-label="Close counselling form"
-            data-close-modal
-          >
-            ×
-          </button>
-          <h2 id="counselling-modal-heading" class="section-title">
-            Book Career Counselling
-          </h2>
-          <p class="section-intro">
-            Book a free 15-minute call to understand how we can support your next step.
-          </p>
-          <form
-            class="lead-form"
-            data-service="Career Counselling"
-            novalidate
-          >
-            <div class="field-grid">
-              <div class="form-field">
-                <label for="counselling-name">Full name</label>
-                <input
-                  id="counselling-name"
-                  name="fullName"
-                  type="text"
-                  autocomplete="name"
-                  required
-                />
-                <p class="field-error" aria-live="polite"></p>
-              </div>
-              <div class="form-field">
-                <label for="counselling-email">Email</label>
-                <input
-                  id="counselling-email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                />
-                <p class="field-error" aria-live="polite"></p>
-              </div>
-              <div class="form-field">
-                <label for="counselling-phone">Phone (WhatsApp preferred)</label>
-                <input
-                  id="counselling-phone"
-                  name="phone"
-                  type="tel"
-                  inputmode="tel"
-                  pattern="^[0-9+\-\s]{8,15}$"
-                  required
-                />
-                <p class="field-error" aria-live="polite"></p>
-              </div>
-              <div class="form-field">
-                <label for="counselling-college">College / University</label>
-                <input
-                  id="counselling-college"
-                  name="college"
-                  type="text"
-                  required
-                />
-                <p class="field-error" aria-live="polite"></p>
-              </div>
-              <div class="form-field">
-                <label for="counselling-degree">Degree &amp; Year</label>
-                <input
-                  id="counselling-degree"
-                  name="degreeYear"
-                  type="text"
-                  placeholder="e.g., MBA, 2026"
-                  required
-                />
-                <p class="field-error" aria-live="polite"></p>
-              </div>
-              <div class="form-field">
-                <label for="counselling-timeline">Preferred timeline</label>
-                <select
-                  id="counselling-timeline"
-                  name="timeline"
-                  required
-                >
-                  <option value="">Select timeline</option>
-                  <option>Within 1 week</option>
-                  <option>Within 1 month</option>
-                  <option>Next 3–6 months</option>
-                </select>
-                <p class="field-error" aria-live="polite"></p>
-              </div>
-              <div class="form-field full-width">
-                <label for="counselling-message">Short message (optional)</label>
-                <textarea
-                  id="counselling-message"
-                  name="message"
-                  rows="3"
-                  placeholder="Share your goals or questions."
-                ></textarea>
+            <div class="form-orbit">
+              <div class="orbit-circle orbit-circle--one"></div>
+              <div class="orbit-circle orbit-circle--two"></div>
+              <div class="orbit-avatar">🎓</div>
+            </div>
+            <div class="form-side-content">
+              <p class="form-side-kicker">What happens next?</p>
+              <ul class="form-side-steps">
+                <li>
+                  <span class="step-dot"></span>
+                  Profile reviewed by our counsellors within 24 hours.
+                </li>
+                <li>
+                  <span class="step-dot"></span>
+                  Personalised plan for Jobs, Study Abroad, or Counselling.
+                </li>
+                <li>
+                  <span class="step-dot"></span>
+                  Next steps shared over email and WhatsApp.
+                </li>
+              </ul>
+              <div class="form-side-metric">
+                <span class="metric-number">95%</span>
+                <span class="metric-label">students say the first call gave them clarity.</span>
               </div>
             </div>
-            <!-- Hidden fields -->
-            <input
-              type="hidden"
-              name="preferredService"
-              value="Career Counselling"
-            />
-            <input type="hidden" name="utmSource" value="" />
-            <input type="hidden" name="landingPageId" value="campus-career-india-main" />
-            <button type="submit" class="btn btn-primary full-width">
-              Book Free Consultation
-            </button>
-            <p class="form-success" aria-live="polite"></p>
-            <p class="form-error" aria-live="polite"></p>
-            <p class="form-note">
-              You’ll receive a confirmation email and a WhatsApp message with your slot details.
-            </p>
-          </form>
+          </aside>
         </div>
-      </div>
+      </section>
 
       <!-- Social proof -->
       <section
@@ -749,7 +564,7 @@
             Helping Indian students and graduates launch careers, secure global admits, and build confident futures.
           </p>
           <p>
-            <strong>Address:</strong> 123 Career Avenue, Bengaluru, Karnataka
+            <strong>Address:</strong> 123 Career Avenue, Lucknow, Uttar Pradesh
           </p>
           <p>
             <strong>Email:</strong>

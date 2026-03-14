@@ -12,48 +12,26 @@ if (navToggle && primaryNav) {
 // Smooth scroll for buttons with data-scroll-target
 document.addEventListener("click", (event) => {
   const target = event.target;
-  if (target instanceof HTMLElement) {
-    const scrollTarget = target.getAttribute("data-scroll-target");
-    if (scrollTarget) {
-      event.preventDefault();
-      const el = document.querySelector(scrollTarget);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-  }
-});
-
-// Modal handling
-function openModal(id) {
-  const modal = document.getElementById(id);
-  if (!modal) return;
-  modal.hidden = false;
-  const firstInput = modal.querySelector("input, select, textarea, button");
-  if (firstInput instanceof HTMLElement) {
-    firstInput.focus();
-  }
-}
-
-function closeModal(modal) {
-  modal.hidden = true;
-}
-
-document.addEventListener("click", (event) => {
-  const target = event.target;
   if (!(target instanceof HTMLElement)) return;
 
-  const modalId = target.getAttribute("data-open-modal");
-  if (modalId) {
+  const scrollTarget = target.getAttribute("data-scroll-target");
+  if (scrollTarget) {
     event.preventDefault();
-    openModal(modalId);
-    return;
-  }
 
-  if (target.hasAttribute("data-close-modal")) {
-    const modal = target.closest(".modal");
-    if (modal) {
-      closeModal(modal);
+    const el = document.querySelector(scrollTarget);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    // If a service choice is provided, pre-select it in the unified form
+    const choice = target.getAttribute("data-service-choice");
+    if (choice) {
+      const serviceSelect = document.querySelector(
+        "#lead-form select[name='preferredService']"
+      );
+      if (serviceSelect instanceof HTMLSelectElement) {
+        serviceSelect.value = choice;
+      }
     }
   }
 });
@@ -209,7 +187,7 @@ function validateField(input) {
 }
 
 function setupForm(form) {
-  const service = form.dataset.service || "Unknown";
+  const fallbackService = form.dataset.service || "Unknown";
   const successEl = form.querySelector(".form-success");
   const errorEl = form.querySelector(".form-error");
 
@@ -245,13 +223,22 @@ function setupForm(form) {
       return;
     }
 
+    const nameInput = form.querySelector("input[name='fullName']");
     const name =
-      (form.querySelector("input[name='fullName']") as HTMLInputElement | null)
-        ?.value || "there";
+      nameInput && nameInput instanceof HTMLInputElement && nameInput.value
+        ? nameInput.value
+        : "there";
+
+    const preferredServiceField =
+      form.querySelector("select[name='preferredService']") ||
+      form.querySelector("input[name='preferredService']");
     const preferredService =
-      (form.querySelector(
-        "input[name='preferredService']"
-      ) as HTMLInputElement | null)?.value || service;
+      preferredServiceField &&
+      preferredServiceField instanceof HTMLInputElement
+        ? preferredServiceField.value
+        : preferredServiceField && preferredServiceField instanceof HTMLSelectElement
+        ? preferredServiceField.value
+        : fallbackService;
 
     try {
       await submitLeadForm(form, preferredService);
