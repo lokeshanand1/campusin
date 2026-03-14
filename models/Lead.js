@@ -30,7 +30,7 @@ const leadSchema = new mongoose.Schema({
   preferredService: {
     type: String,
     required: true,
-    enum: ['Jobs', 'Study Abroad', 'Career Counselling']
+    enum: ['Apply for Job', 'Study Abroad', 'Career Counselling']
   },
   preferredTimeline: {
     type: String,
