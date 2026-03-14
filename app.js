@@ -119,6 +119,13 @@ function getUtmParams() {
   return { utmSource, utmMedium, utmCampaign };
 }
 
+// API URL configuration - uses Render backend on GitHub Pages, localhost for development
+const API_BASE_URL = window.location.hostname.includes('github.io') 
+  ? 'https://campus-career-api.onrender.com' 
+  : '';
+
+window.CAMPUS_CAREER_API_URL = API_BASE_URL + '/api/leads';
+
 // Generic API submission to backend
 async function submitLeadForm(form, service) {
   const formData = new FormData(form);
@@ -153,9 +160,7 @@ async function submitLeadForm(form, service) {
 
 // Newsletter subscription to backend
 async function subscribeNewsletter(email) {
-  const apiUrl = window.CAMPUS_CAREER_API_URL ? 
-    window.CAMPUS_CAREER_API_URL.replace('/leads', '/subscribe') : 
-    "/api/subscribe";
+  const apiUrl = API_BASE_URL + "/api/subscribe";
 
   const response = await fetch(apiUrl, {
     method: "POST",
