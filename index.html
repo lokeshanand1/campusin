@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Campus Career India — Jobs, Study Abroad &amp; Career Counselling</title>
+    <meta
+      name="description"
+      content="Campus Career India helps students land jobs, secure global university admissions, and plan career paths. Free consultation available."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Structured data: Organization + LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "LocalBusiness"],
+        "name": "Campus Career India",
+        "url": "https://www.campuscareerindia.example",
+        "logo": "https://www.campuscareerindia.example/logo.png",
+        "description": "Campus Career India helps students land jobs, secure global university admissions, and plan career paths.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Career Avenue",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560001",
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-98765-43210",
+        "sameAs": [
+          "https://www.facebook.com/campuscareerindia",
+          "https://www.linkedin.com/company/campuscareerindia"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main header">
+      <div class="container header-inner">
+        <a href="#top" class="logo" aria-label="Campus Career India home">
+          <span class="logo-mark">🎓</span>
+          <span class="logo-text">Campus Career India</span>
+        </a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav
+          id="primary-navigation"
+          class="primary-nav"
+          aria-label="Primary navigation"
+        >
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#success-stories">Success Stories</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a href="#apply-job-form" class="btn btn-primary nav-cta">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section id="hero" class="hero" aria-labelledby="hero-heading">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 id="hero-heading">
+              Launch Your Career — Jobs, Study Abroad &amp; Career Counselling
+            </h1>
+            <p class="hero-subhead">
+              From resume to interview, from applications to visas — Campus Career India guides students every step of the way.
+            </p>
+            <div class="hero-ctas">
+              <a href="#apply-job-form" class="btn btn-primary">Apply Now</a>
+              <button
+                class="btn btn-outline"
+                type="button"
+                data-open-modal="counselling-modal"
+              >
+                Book Counselling
+              </button>
+            </div>
+            <div class="hero-trust" aria-label="Campus Career India highlights">
+              <div class="trust-item">
+                <span class="trust-number">500+</span>
+                <span class="trust-label">Student placements</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-number">200+</span>
+                <span class="trust-label">University partners</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-number">95%</span>
+                <span class="trust-label">Student satisfaction</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-card">
+              <div class="hero-illustration">
+                <span class="grad-cap">🎓</span>
+                <span class="plane">✈️</span>
+              </div>
+              <p class="hero-visual-text">
+                Indian students and graduates unlocking global careers with expert guidance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section
+        id="services"
+        class="section services"
+        aria-labelledby="services-heading"
+      >
+        <div class="container">
+          <h2 id="services-heading" class="section-title">Choose your pathway</h2>
+          <p class="section-intro">
+            Whether you are looking for your first job, a global university admit, or clarity on your career path — Campus Career India is by your side.
+          </p>
+          <div class="service-grid">
+            <article class="service-card">
+              <h3>Apply for Job</h3>
+              <p>
+                Get end-to-end support to convert campus and off-campus opportunities into real offers.
+              </p>
+              <ul>
+                <li>Resume review tailored to Indian and global recruiters</li>
+                <li>One-on-one interview coaching and mock interviews</li>
+                <li>Access to curated placement drives and job alerts</li>
+              </ul>
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-scroll-target="#apply-job-form"
+              >
+                Apply for Job
+              </button>
+            </article>
+
+            <article class="service-card">
+              <h3>Study Abroad</h3>
+              <p>
+                Secure admits at top universities in the US, UK, Canada, Europe, and beyond.
+              </p>
+              <ul>
+                <li>Personalized university shortlisting and course selection</li>
+                <li>SOP/LOI review and application strategy</li>
+                <li>Visa guidance, finances, and pre-departure prep</li>
+              </ul>
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-scroll-target="#study-abroad-form"
+              >
+                Start Study Abroad
+              </button>
+            </article>
+
+            <article class="service-card">
+              <h3>Career Counselling</h3>
+              <p>
+                Build a clear roadmap from college to a fulfilling career, in India or abroad.
+              </p>
+              <ul>
+                <li>Career mapping based on your interests and strengths</li>
+                <li>Aptitude assessment and skill gap analysis</li>
+                <li>Mentorship, mock interviews, and accountability check-ins</li>
+              </ul>
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-open-modal="counselling-modal"
+              >
+                Book Counselling
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section
+        class="section how-it-works"
+        aria-labelledby="how-it-works-heading"
+      >
+        <div class="container">
+          <h2 id="how-it-works-heading" class="section-title">How it works</h2>
+          <ol class="steps">
+            <li class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Sign up</h3>
+                <p>Share your details and career goals in a quick online form.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Get a personalised plan</h3>
+                <p>Our counsellors review your profile and send an action plan.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Apply &amp; succeed</h3>
+                <p>We guide you through applications, interviews, and final offers.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Lead capture forms -->
+      <section
+        class="section forms-section"
+        aria-label="Lead capture forms for services"
+      >
+        <div class="container forms-grid">
+          <!-- Job form -->
+          <article
+            class="form-card"
+            id="apply-job-form"
+            aria-labelledby="apply-job-heading"
+          >
+            <h2 id="apply-job-heading" class="section-title">
+              Apply for Job Support
+            </h2>
+            <p class="section-intro">
+              Share a few details and we will match you with the right placement and coaching support.
+            </p>
+            <form
+              class="lead-form"
+              data-service="Apply for Job"
+              novalidate
+            >
+              <div class="field-grid">
+                <div class="form-field">
+                  <label for="job-name">Full name</label>
+                  <input
+                    id="job-name"
+                    name="fullName"
+                    type="text"
+                    autocomplete="name"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="job-email">Email</label>
+                  <input
+                    id="job-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="job-phone">Phone (WhatsApp preferred)</label>
+                  <input
+                    id="job-phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    pattern="^[0-9+\-\s]{8,15}$"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="job-college">College / University</label>
+                  <input
+                    id="job-college"
+                    name="college"
+                    type="text"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="job-degree">Degree &amp; Year</label>
+                  <input
+                    id="job-degree"
+                    name="degreeYear"
+                    type="text"
+                    placeholder="e.g., B.Tech CSE, 2025"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="job-timeline">Preferred timeline</label>
+                  <select id="job-timeline" name="timeline" required>
+                    <option value="">Select timeline</option>
+                    <option>Immediately</option>
+                    <option>Next 3 months</option>
+                    <option>Next 6–12 months</option>
+                  </select>
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field full-width">
+                  <label for="job-message">Short message (optional)</label>
+                  <textarea
+                    id="job-message"
+                    name="message"
+                    rows="3"
+                    placeholder="Share your target roles, companies, or challenges."
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Hidden fields -->
+              <input type="hidden" name="preferredService" value="Apply for Job" />
+              <input type="hidden" name="utmSource" value="" />
+              <input type="hidden" name="landingPageId" value="campus-career-india-main" />
+              <button type="submit" class="btn btn-primary full-width">
+                Apply Now
+              </button>
+              <p class="form-success" aria-live="polite"></p>
+              <p class="form-error" aria-live="polite"></p>
+              <p class="form-note">
+                By submitting, you agree to be contacted by email and WhatsApp. We respect your privacy.
+              </p>
+            </form>
+          </article>
+
+          <!-- Study abroad form -->
+          <article
+            class="form-card"
+            id="study-abroad-form"
+            aria-labelledby="study-abroad-heading"
+          >
+            <h2 id="study-abroad-heading" class="section-title">
+              Start Your Study Abroad Plan
+            </h2>
+            <p class="section-intro">
+              Tell us where you want to go and what you want to study. We’ll help you build a winning application.
+            </p>
+            <form
+              class="lead-form"
+              data-service="Study Abroad"
+              novalidate
+            >
+              <div class="field-grid">
+                <div class="form-field">
+                  <label for="abroad-name">Full name</label>
+                  <input
+                    id="abroad-name"
+                    name="fullName"
+                    type="text"
+                    autocomplete="name"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="abroad-email">Email</label>
+                  <input
+                    id="abroad-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="abroad-phone">Phone (WhatsApp preferred)</label>
+                  <input
+                    id="abroad-phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    pattern="^[0-9+\-\s]{8,15}$"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="abroad-college">College / University</label>
+                  <input
+                    id="abroad-college"
+                    name="college"
+                    type="text"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="abroad-degree">Degree &amp; Year</label>
+                  <input
+                    id="abroad-degree"
+                    name="degreeYear"
+                    type="text"
+                    placeholder="e.g., B.Com, 2024"
+                    required
+                  />
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field">
+                  <label for="abroad-timeline">Preferred intake / timeline</label>
+                  <select id="abroad-timeline" name="timeline" required>
+                    <option value="">Select intake</option>
+                    <option>Jan intake</option>
+                    <option>May intake</option>
+                    <option>Sep intake</option>
+                    <option>Next 12–18 months</option>
+                  </select>
+                  <p class="field-error" aria-live="polite"></p>
+                </div>
+                <div class="form-field full-width">
+                  <label for="abroad-message">Short message (optional)</label>
+                  <textarea
+                    id="abroad-message"
+                    name="message"
+                    rows="3"
+                    placeholder="Target countries, budget, test scores (IELTS, GRE, etc.)."
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Hidden fields -->
+              <input
+                type="hidden"
+                name="preferredService"
+                value="Study Abroad"
+              />
+              <input type="hidden" name="utmSource" value="" />
+              <input type="hidden" name="landingPageId" value="campus-career-india-main" />
+              <button type="submit" class="btn btn-primary full-width">
+                Start Study Abroad
+              </button>
+              <p class="form-success" aria-live="polite"></p>
+              <p class="form-error" aria-live="polite"></p>
+              <p class="form-note">
+                We’ll follow up with a free 15-minute discovery call on WhatsApp.
+              </p>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <!-- Counselling modal form -->
+      <div
+        class="modal"
+        id="counselling-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="counselling-modal-heading"
+        hidden
+      >
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-content">
+          <button
+            class="modal-close"
+            type="button"
+            aria-label="Close counselling form"
+            data-close-modal
+          >
+            ×
+          </button>
+          <h2 id="counselling-modal-heading" class="section-title">
+            Book Career Counselling
+          </h2>
+          <p class="section-intro">
+            Book a free 15-minute call to understand how we can support your next step.
+          </p>
+          <form
+            class="lead-form"
+            data-service="Career Counselling"
+            novalidate
+          >
+            <div class="field-grid">
+              <div class="form-field">
+                <label for="counselling-name">Full name</label>
+                <input
+                  id="counselling-name"
+                  name="fullName"
+                  type="text"
+                  autocomplete="name"
+                  required
+                />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="counselling-email">Email</label>
+                <input
+                  id="counselling-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="counselling-phone">Phone (WhatsApp preferred)</label>
+                <input
+                  id="counselling-phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="tel"
+                  pattern="^[0-9+\-\s]{8,15}$"
+                  required
+                />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="counselling-college">College / University</label>
+                <input
+                  id="counselling-college"
+                  name="college"
+                  type="text"
+                  required
+                />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="counselling-degree">Degree &amp; Year</label>
+                <input
+                  id="counselling-degree"
+                  name="degreeYear"
+                  type="text"
+                  placeholder="e.g., MBA, 2026"
+                  required
+                />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <label for="counselling-timeline">Preferred timeline</label>
+                <select
+                  id="counselling-timeline"
+                  name="timeline"
+                  required
+                >
+                  <option value="">Select timeline</option>
+                  <option>Within 1 week</option>
+                  <option>Within 1 month</option>
+                  <option>Next 3–6 months</option>
+                </select>
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="form-field full-width">
+                <label for="counselling-message">Short message (optional)</label>
+                <textarea
+                  id="counselling-message"
+                  name="message"
+                  rows="3"
+                  placeholder="Share your goals or questions."
+                ></textarea>
+              </div>
+            </div>
+            <!-- Hidden fields -->
+            <input
+              type="hidden"
+              name="preferredService"
+              value="Career Counselling"
+            />
+            <input type="hidden" name="utmSource" value="" />
+            <input type="hidden" name="landingPageId" value="campus-career-india-main" />
+            <button type="submit" class="btn btn-primary full-width">
+              Book Free Consultation
+            </button>
+            <p class="form-success" aria-live="polite"></p>
+            <p class="form-error" aria-live="polite"></p>
+            <p class="form-note">
+              You’ll receive a confirmation email and a WhatsApp message with your slot details.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Social proof -->
+      <section
+        id="success-stories"
+        class="section testimonials"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="container">
+          <h2 id="testimonials-heading" class="section-title">
+            Students who trusted Campus Career India
+          </h2>
+          <div class="testimonial-slider" aria-live="polite">
+            <figure class="testimonial active">
+              <blockquote>
+                “Campus Career India helped me convert an internship into a full-time offer.”
+              </blockquote>
+              <figcaption>
+                <span class="testimonial-name">Aisha</span>,
+                <span class="testimonial-meta">B.Tech 2025</span>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “Their SOP review and mock visa interview made my UK admit and visa process smooth.”
+              </blockquote>
+              <figcaption>
+                <span class="testimonial-name">Rohan</span>,
+                <span class="testimonial-meta">MSc Data Science, UK</span>
+              </figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “I was confused between higher studies and jobs. The counselling sessions gave me clarity and a concrete plan.”
+              </blockquote>
+              <figcaption>
+                <span class="testimonial-name">Simran</span>,
+                <span class="testimonial-meta">MBA Aspirant</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="testimonial-controls">
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Show testimonial 1"
+              data-slide="0"
+            ></button>
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Show testimonial 2"
+              data-slide="1"
+            ></button>
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Show testimonial 3"
+              data-slide="2"
+            ></button>
+          </div>
+          <div class="case-study-cta">
+            <p>
+              Want to see how a final-year student cracked a global offer and a top admit?
+            </p>
+            <a href="#" class="btn btn-outline">Read full success story</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing / Packages -->
+      <section class="section pricing" aria-labelledby="pricing-heading">
+        <div class="container">
+          <h2 id="pricing-heading" class="section-title">
+            Counselling &amp; Study Abroad Packages
+          </h2>
+          <p class="section-intro">
+            Start with a free call. Upgrade to a package only if you see value.
+          </p>
+          <div class="pricing-grid">
+            <article class="pricing-card">
+              <h3>Basic Guidance</h3>
+              <p class="pricing-price">₹0 / intro session</p>
+              <ul>
+                <li>15-minute discovery call</li>
+                <li>High-level career or study roadmap</li>
+                <li>WhatsApp follow-up with key action items</li>
+              </ul>
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-open-modal="counselling-modal"
+              >
+                Book Free Consultation
+              </button>
+            </article>
+            <article class="pricing-card">
+              <h3>Premium Mentorship</h3>
+              <p class="pricing-price">Custom pricing</p>
+              <ul>
+                <li>Multiple 1:1 counselling and strategy sessions</li>
+                <li>Application / resume / SOP reviews</li>
+                <li>Mock interviews and long-term mentorship</li>
+              </ul>
+              <button
+                class="btn btn-primary"
+                type="button"
+                data-open-modal="counselling-modal"
+              >
+                Get My Plan
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section faq" aria-labelledby="faq-heading">
+        <div class="container">
+          <h2 id="faq-heading" class="section-title">Frequently asked questions</h2>
+          <div class="faq-list">
+            <details>
+              <summary>How long do placements usually take?</summary>
+              <p>
+                Placement timelines vary by profile and market conditions. Most students who actively follow the plan start seeing interview calls within 4–8 weeks.
+              </p>
+            </details>
+            <details>
+              <summary>How long does the study-abroad process take?</summary>
+              <p>
+                From shortlisting to visas, students typically need 6–12 months. We recommend starting at least one application cycle in advance to keep options open.
+              </p>
+            </details>
+            <details>
+              <summary>What is your refund or cancellation policy?</summary>
+              <p>
+                Intro calls are free. For paid packages, we have transparent milestones. If a package is not a fit after the first full session, we offer partial refunds as per our terms.
+              </p>
+            </details>
+            <details>
+              <summary>Who are your counsellors and mentors?</summary>
+              <p>
+                Our team includes alumni from top Indian and global universities with industry experience in technology, consulting, finance, and more.
+              </p>
+            </details>
+            <details>
+              <summary>How do you help with interviews and preparation?</summary>
+              <p>
+                We run profile-based mock interviews, question banks, and feedback sessions so that you are confident across HR, case, and technical rounds.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Contact & footer -->
+    <footer
+      id="contact"
+      class="site-footer"
+      aria-label="Campus Career India footer"
+    >
+      <div class="container footer-grid">
+        <div class="footer-column">
+          <h2 class="footer-heading">Campus Career India</h2>
+          <p>
+            Helping Indian students and graduates launch careers, secure global admits, and build confident futures.
+          </p>
+          <p>
+            <strong>Address:</strong> 123 Career Avenue, Bengaluru, Karnataka
+          </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:hello@campuscareerindia.example"
+              >hello@campuscareerindia.example</a
+            >
+          </p>
+          <p>
+            <strong>WhatsApp:</strong>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer"
+              >+91 98765 43210</a
+            >
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Quick links</h3>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#success-stories">Success Stories</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-heading">Stay updated</h3>
+          <p>Get placement tips, study-abroad updates, and webinar invites.</p>
+          <form class="newsletter-form" novalidate>
+            <label class="visually-hidden" for="newsletter-email"
+              >Email address</label
+            >
+            <input
+              id="newsletter-email"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit" class="btn btn-secondary">
+              Subscribe
+            </button>
+            <p class="form-success" aria-live="polite"></p>
+            <p class="form-error" aria-live="polite"></p>
+          </form>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/campuscareerindia"
+              aria-label="Campus Career India on Facebook"
+              target="_blank"
+              rel="noreferrer"
+              >Fb</a
+            >
+            <a
+              href="https://www.linkedin.com/company/campuscareerindia"
+              aria-label="Campus Career India on LinkedIn"
+              target="_blank"
+              rel="noreferrer"
+              >Ln</a
+            >
+            <a
+              href="#"
+              aria-label="Campus Career India on Instagram"
+              target="_blank"
+              rel="noreferrer"
+              >Ig</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> Campus Career India. All rights reserved.</p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
