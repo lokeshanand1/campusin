@@ -121,7 +121,7 @@ function getUtmParams() {
 
 // API URL configuration - uses Render backend on GitHub Pages, localhost for development
 const API_BASE_URL = window.location.hostname.includes('github.io') 
-  ? 'https://campus-career-api.onrender.com' 
+  ? 'https://campusin.onrender.com' 
   : '';
 
 window.CAMPUS_CAREER_API_URL = API_BASE_URL + '/api/leads';
