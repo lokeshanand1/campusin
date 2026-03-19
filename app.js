@@ -270,6 +270,16 @@ function setupForm(form) {
         ? preferredServiceField.value
         : fallbackService;
 
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn?.textContent || 'Submit';
+    
+    // Show submitting state
+    if (submitBtn) {
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.style.opacity = '0.7';
+      submitBtn.disabled = true;
+    }
+
     try {
       await submitLeadForm(form, preferredService);
       trackConversion(preferredService, "landing-page");
@@ -283,6 +293,13 @@ function setupForm(form) {
       if (errorEl) {
         errorEl.textContent =
           "Something went wrong while submitting. Please try again in a moment.";
+      }
+    } finally {
+      // Restore button state
+      if (submitBtn) {
+        submitBtn.textContent = originalBtnText;
+        submitBtn.style.opacity = '1';
+        submitBtn.disabled = false;
       }
     }
   });
@@ -315,6 +332,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn?.textContent || 'Subscribe';
+      
+      // Show submitting state
+      if (submitBtn) {
+        submitBtn.textContent = 'Subscribing...';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.disabled = true;
+      }
+
       try {
         const result = await subscribeNewsletter(emailInput.value.trim());
         if (successEl) {
@@ -326,6 +353,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (errorEl) {
           errorEl.textContent = error.message || 
             "Something went wrong. Please try again.";
+        }
+      } finally {
+        // Restore button state
+        if (submitBtn) {
+          submitBtn.textContent = originalBtnText;
+          submitBtn.style.opacity = '1';
+          submitBtn.disabled = false;
         }
       }
     });
