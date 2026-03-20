@@ -12,7 +12,7 @@
 .services-hero {
   padding: 8rem 0 4rem;
   text-align: center;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 .services-hero h1 {
@@ -34,7 +34,7 @@
 /* ── MINIMALIST LIGHT GRID ── */
 .minimal-section {
   padding: 2rem 0 6rem;
-  background-color: #fcfcfc;
+  background-color: transparent;
 }
 
 .minimal-grid {
