@@ -192,6 +192,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  align-content: center;
   gap: 0.6rem;
   margin-bottom: 2.5rem;
   flex-grow: 1; /* Pushes the button to the bottom */
