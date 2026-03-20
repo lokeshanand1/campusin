@@ -129,6 +129,9 @@
   .dark-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+  .dark-grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Premium Dark Card */
