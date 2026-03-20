@@ -157,7 +157,7 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Udyam Certificate — force download route
+// Udyam Certificate - force download route
 app.get('/download/udyam', (req, res) => {
   const path = require('path');
   const filePath = path.join(__dirname, 'udyam.pdf');

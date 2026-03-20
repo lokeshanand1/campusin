@@ -1,5 +1,5 @@
 /* ============================================================
-   about.css — styles for about.html (About Us page)
+   about.css - styles for about.html (About Us page)
    ============================================================ */
 
 /* ── About Hero ─────────────────────────────────────────── */
@@ -435,6 +435,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .about-founder-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -456,6 +460,11 @@
 @media (max-width: 768px) {
   .about-service-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 5rem;
   }
 
   .udyam-card {

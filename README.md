@@ -1,4 +1,4 @@
-# Campus Career India — Landing Page Prototype
+# Campus Career India - Landing Page Prototype
 
 This is a responsive HTML/CSS/JS prototype for the **Campus Career India** landing page.
 
@@ -117,8 +117,8 @@ The script in `app.js` is wired for:
 
 Key copy is already baked into the page:
 
-- **Hero headline**: “Launch Your Career — Jobs, Study Abroad & Career Counselling”
-- **Hero subhead**: “From resume to interview, from applications to visas — Campus Career India guides students every step of the way.”
+- **Hero headline**: “Launch Your Career - Jobs, Study Abroad & Career Counselling”
+- **Hero subhead**: “From resume to interview, from applications to visas - Campus Career India guides students every step of the way.”
 - **Service cards** include:
   - Apply for Job: “Resume review • Interview coaching • Campus & off-campus placements”
   - Study Abroad: “University shortlisting • SOP/LOI support • Visa guidance & pre-departure prep”
@@ -132,7 +132,7 @@ You can adjust all copy directly in `index.html`.
 
 **Email (on form success)**
 
-Subject: `We got your request — Campus Career India`
+Subject: `We got your request - Campus Career India`
 
 Body:
 
@@ -151,7 +151,7 @@ Body:
 
 ## SEO & meta
 
-- **Title**: `Campus Career India — Jobs, Study Abroad & Career Counselling`
+- **Title**: `Campus Career India - Jobs, Study Abroad & Career Counselling`
 - **Meta description**: defined in the `<head>` of `index.html`.
 - **H1**: same as the hero headline.
 - **Structured data**: `Organization` + `LocalBusiness` JSON‑LD is included for better visibility.
