@@ -1,35 +1,108 @@
 /* ── services.css ───────────────────────────────────────────
-   Dark Theme Grid Layout (Degree Crafters Style)
+   Mixed Theme Grid Layout (Degree Crafters Style)
 ───────────────────────────────────────────────────────── */
 
-/* Reset for the dark section */
+/* Reset for the page */
 .services-page-main {
-  background-color: #121212;
-  color: #ffffff;
-  padding-bottom: 6rem;
-  min-height: 100vh;
+  background-color: #fcfcfc;
+  color: #333333;
 }
 
-/* Services Hero */
+/* Services Hero (Light Theme) */
 .services-hero {
   padding: 8rem 0 4rem;
   text-align: center;
+  background-color: #ffffff;
 }
 
 .services-hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #1a1a1a;
   margin-bottom: 1rem;
 }
 
 .services-hero-sub {
   font-family: 'Inter', sans-serif;
   font-size: 1.15rem;
-  color: #a0a0a0;
+  color: #666666;
   max-width: 650px;
   margin: 0 auto;
+}
+
+/* ── MINIMALIST LIGHT GRID ── */
+.minimal-section {
+  padding: 2rem 0 6rem;
+  background-color: #fcfcfc;
+}
+
+.minimal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.minimal-card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-right: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.minimal-card:hover {
+  background-color: #fcfcfc;
+}
+
+.minimal-card .card-arrow {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #ccc;
+  font-size: 1.2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.minimal-card:hover .card-arrow {
+  color: #c5a059;
+  transform: translate(2px, -2px);
+}
+
+.minimal-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.minimal-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.8rem;
+}
+
+.minimal-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── DARK SECTION AND GRID ── */
+.dark-section-wrapper {
+  background-color: #121212;
+  padding: 5rem 0 6rem;
 }
 
 /* Section Headings */
@@ -40,7 +113,6 @@
   color: #ffffff;
   text-align: center;
   margin-bottom: 3rem;
-  margin-top: 4rem;
   border-bottom: 1px solid #333;
   padding-bottom: 1rem;
 }
@@ -52,7 +124,7 @@
   gap: 1.5rem;
 }
 
-/* Specific 4-column layout if space permits, like the screenshot */
+/* Specific 4-column layout */
 @media (min-width: 1100px) {
   .dark-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -162,3 +234,4 @@
     font-size: 2.5rem;
   }
 }
+
