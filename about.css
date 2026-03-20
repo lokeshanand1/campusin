@@ -1,0 +1,500 @@
+/* ============================================================
+   about.css — styles for about.html (About Us page)
+   ============================================================ */
+
+/* ── About Hero ─────────────────────────────────────────── */
+.about-hero {
+  position: relative;
+  padding: 5rem 0 6rem;
+  background: linear-gradient(135deg, #0b3c7d 0%, #1d4ed8 50%, #0e2d6e 100%);
+  color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(255,122,60,0.25), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(56,189,248,0.2), transparent 50%);
+  pointer-events: none;
+}
+
+.about-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fbbf24;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.2rem;
+}
+
+.badge-icon {
+  font-size: 1rem;
+}
+
+.about-hero h1 {
+  font-size: clamp(2rem, 4vw + 0.5rem, 3.2rem);
+  margin: 0 0 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-hero-sub {
+  margin: 0 auto 2rem;
+  max-width: 52rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+}
+
+.about-udyam-btn {
+  background: linear-gradient(135deg, #ff7a3c, #e55a1a) !important;
+  box-shadow: 0 14px 30px rgba(255, 122, 60, 0.4) !important;
+}
+
+.btn-icon {
+  margin-right: 0.3rem;
+}
+
+.about-hero-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--color-bg, #f5f7fb);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+/* ── What We Do ─────────────────────────────────────────── */
+.about-what-we-do {
+  background: var(--color-bg, #f5f7fb);
+}
+
+.about-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about-service-card {
+  border-radius: 20px;
+  padding: 2rem 1.6rem;
+  box-shadow: var(--shadow-soft, 0 10px 30px rgba(15,23,42,0.08));
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(209, 213, 219, 0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+}
+
+.about-service-card--blue::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0b3c7d, #3b82f6);
+  border-radius: 20px 20px 0 0;
+}
+
+.about-service-card--orange::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff7a3c, #fbbf24);
+  border-radius: 20px 20px 0 0;
+}
+
+.about-service-card--green::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #059669, #34d399);
+  border-radius: 20px 20px 0 0;
+}
+
+.about-service-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.9rem;
+}
+
+.about-service-card h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary, #0b3c7d);
+  margin: 0 0 0.6rem;
+}
+
+.about-service-card p {
+  font-size: 0.9rem;
+  color: var(--color-muted, #6b7280);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Vision + Mission ───────────────────────────────────── */
+.about-vision-mission {
+  background: linear-gradient(to bottom, #eef2ff, #f9fafb);
+}
+
+.about-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.about-vision-card,
+.about-mission-card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  padding: 2rem 1.8rem;
+  box-shadow: var(--shadow-soft, 0 10px 30px rgba(15,23,42,0.08));
+  border: 1px solid rgba(209, 213, 219, 0.5);
+}
+
+.vm-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.about-vision-card h2,
+.about-mission-card h2 {
+  color: var(--color-primary, #0b3c7d);
+  margin: 0 0 0.8rem;
+  font-size: 1.4rem;
+}
+
+.about-vision-card p {
+  font-size: 1rem;
+  color: var(--color-text, #1f2933);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.mission-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mission-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--color-text, #1f2933);
+  line-height: 1.6;
+}
+
+.mission-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #059669;
+  font-weight: 700;
+}
+
+/* ── Founder Section ────────────────────────────────────── */
+.about-founder {
+  background: radial-gradient(circle at top left, #e0edff, #f9fafb 40%, #eef2ff);
+}
+
+.about-founder-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.founder-photo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.founder-photo {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 24px;
+  box-shadow: 0 24px 50px rgba(11, 60, 125, 0.25);
+  object-fit: cover;
+  display: block;
+}
+
+.founder-photo-badge {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff7a3c, #fbbf24);
+  color: #1f2933;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(255, 122, 60, 0.35);
+}
+
+.founder-kicker {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent, #ff7a3c);
+  margin: 0 0 0.3rem;
+}
+
+.founder-info-col h2 {
+  font-size: 2.2rem;
+  color: var(--color-primary, #0b3c7d);
+  margin: 0 0 0.2rem;
+}
+
+.founder-tagline {
+  font-size: 1rem;
+  color: var(--color-muted, #6b7280);
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+.founder-info-col > p {
+  color: var(--color-text, #1f2933);
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+}
+
+.founder-expertise h3,
+.founder-achievements h3,
+.founder-education h3 {
+  font-size: 0.95rem;
+  color: var(--color-primary, #0b3c7d);
+  margin: 0 0 0.55rem;
+  font-weight: 700;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.tag {
+  background: #e0e8f8;
+  color: #0b3c7d;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 60, 125, 0.2);
+}
+
+.founder-achievements ul,
+.founder-education ul {
+  list-style: none;
+  margin: 0 0 1.4rem;
+  padding: 0;
+}
+
+.founder-achievements li,
+.founder-education li {
+  font-size: 0.9rem;
+  color: var(--color-text, #1f2933);
+  padding: 0.25rem 0;
+  line-height: 1.6;
+}
+
+/* Founder Message Quote */
+.founder-message {
+  background: linear-gradient(135deg, #0b3c7d 0%, #1d4ed8 100%);
+  border-radius: 24px;
+  padding: 2.5rem 2.5rem 2rem;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 24px 50px rgba(11, 60, 125, 0.3);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.quote-mark {
+  display: block;
+  font-size: 3rem;
+  color: #fbbf24;
+  line-height: 1;
+  margin-bottom: 0.7rem;
+}
+
+.founder-message p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  font-style: italic;
+  max-width: 55rem;
+  margin: 0 auto 1rem;
+}
+
+.founder-message footer {
+  font-size: 0.9rem;
+  color: #bfdbfe;
+}
+
+.founder-message footer strong {
+  color: #fbbf24;
+}
+
+/* ── Udyam Certificate CTA ─────────────────────────────── */
+.about-udyam-cta {
+  background: #f9fafb;
+}
+
+.udyam-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: var(--shadow-soft, 0 10px 30px rgba(15,23,42,0.08));
+  border: 1px solid rgba(209, 213, 219, 0.7);
+  flex-wrap: wrap;
+}
+
+.udyam-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.udyam-logo-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.udyam-left h2 {
+  font-size: 1.4rem;
+  color: var(--color-primary, #0b3c7d);
+  margin: 0 0 0.4rem;
+}
+
+.udyam-left p {
+  color: var(--color-muted, #6b7280);
+  margin: 0;
+  font-size: 0.92rem;
+  max-width: 42rem;
+}
+
+.udyam-download-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #0b3c7d, #071f4e) !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 1.6rem !important;
+}
+
+/* Udyam footer link */
+.udyam-footer-link {
+  color: #fbbf24 !important;
+}
+
+.udyam-footer-link:hover {
+  color: #f59e0b !important;
+}
+
+/* Nav active state */
+.nav-active {
+  color: var(--color-primary, #0b3c7d) !important;
+  font-weight: 700 !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .about-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-founder-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .founder-photo-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .founder-photo {
+    max-width: 320px;
+  }
+
+  .about-vision-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .udyam-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .about-hero {
+    padding: 4rem 0 5rem;
+  }
+
+  .about-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .about-founder-grid {
+    gap: 2rem;
+  }
+
+  .founder-message {
+    padding: 2rem 1.5rem;
+  }
+
+  .founder-message p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-hero-ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .expertise-tags {
+    gap: 0.4rem;
+  }
+}

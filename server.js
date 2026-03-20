@@ -157,6 +157,28 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Udyam Certificate — force download route
+app.get('/download/udyam', (req, res) => {
+  const path = require('path');
+  const filePath = path.join(__dirname, 'udyam.pdf');
+  res.setHeader('Content-Type', 'application/pdf');
+  res.setHeader('Content-Disposition', 'attachment; filename="Udyam-Certificate-CampusCareersIndia.pdf"');
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Error sending Udyam certificate:', err);
+      res.status(404).json({ success: false, message: 'File not found' });
+    }
+  });
+});
+
+// Sitemap with correct content-type
+app.get('/sitemap.xml', (req, res) => {
+  const path = require('path');
+  res.setHeader('Content-Type', 'application/xml');
+  res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+

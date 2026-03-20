@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.campuscareersindia.in/sitemap.xml
+
+# Block access to API routes from crawlers
+Disallow: /api/
+
+# Block internal/admin files
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /models/
