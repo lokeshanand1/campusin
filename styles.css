@@ -1170,8 +1170,21 @@ button {
     padding-inline: 0.25rem;
   }
 
+  .desktop-only {
+    display: none !important;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .nav-toggle {
     display: inline-flex;
+    margin-left: auto;
   }
 
   .primary-nav {
@@ -1205,9 +1218,16 @@ button {
     width: 100%;
   }
 
-  .nav-cta {
+  /* Force links to be visible on white background, overriding any inline inline dark theme text styling */
+  .primary-nav a {
+    color: #1a1a1a !important;
+    display: block;
     width: 100%;
-    justify-content: center;
+    padding: 0.5rem 0;
+  }
+
+  .nav-cta {
+    display: none;
   }
 
   .hero-trust {
